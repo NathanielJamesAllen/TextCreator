@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-//  Finally, write a similar program to input Employee name, hours worked and pay rate and calculate gross pay, with the data being placed on the screen and in a data file as it is here.
+//C++ program to input Employee name, hours worked and pay rate and calculate gross pay, with the data being placed on the screen and in a data file as it is here.
 using namespace std;
 
 void input_inventory_record(string&, double&, double&, double&);
@@ -15,7 +15,6 @@ int main()
     string employee_name;
     double hours, payrate, gross_value;
     string keep_on_going;
-
     keep_on_going = "Y";
 
     outfile.open("paystub.txt");
@@ -32,11 +31,9 @@ int main()
     outfile.close();
 
     return 0;
-
 }
 
 void input_inventory_record(string& ename, double& ehours, double& epayrate, double& egrosspay) {
-
     cout << "Enter the Employee's Name: ";
     getline(cin, ename);
     cout << "Enter the hours worked   : ";
@@ -45,16 +42,13 @@ void input_inventory_record(string& ename, double& ehours, double& epayrate, dou
     cin >> epayrate;
     egrosspay = ehours * epayrate;
     cin.ignore(256, '\n');
-
 }
 
 void print_inventory_record(string ename, double ehours, double epayrate, double egrosspay) {
-
     cout << ename << " " << ehours << " " << epayrate << " " << egrosspay << endl;
 }
 
 void write_inventory_record(ofstream& ofile, string ename, double ehours, double epayrate, double egrosspay) {
-
     ofile << ename << endl;
     ofile << ehours << endl;
     ofile << epayrate << endl;
